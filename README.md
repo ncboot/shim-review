@@ -20,33 +20,41 @@ Here's the template:
 -------------------------------------------------------------------------------
 What organization or people are asking to have this signed:
 -------------------------------------------------------------------------------
-[your text here]
+[NComputing Global, Inc 
+
+NComputing is a software developer providing secure endpoint solutions for companies and organizations worldwide. https://ncomputing.com ]
 
 -------------------------------------------------------------------------------
 What product or service is this for:
 -------------------------------------------------------------------------------
-[your text here]
+[LEAF OS Linux software endpoint solution by NComputing. ]
 
 -------------------------------------------------------------------------------
 What's the justification that this really does need to be signed for the whole world to be able to boot it:
 -------------------------------------------------------------------------------
-[your text here]
+[NComputing LEAF OS is a Linux software endpoint solution that transforms any x86-64 PC, laptop, or thin client into a secure and centrally managed endpoint to access popular desktop virtualization environments, including Microsoft Azure Virtual Desktop (AVD), Windows 365 Cloud PC, Microsoft Remote Desktop Services (RDS) and others.  LEAF OS solution is available worldwide, covering education, SMB, SME and enterprise customers. 
+
+LEAF OS endpoint solution addresses concerns related to security, corporate data leakage, patch management and central manageability for companies with working-from-home and BYOD initiatives using personal devices.  A bootable USB memory stick can be created containing LEAF OS. Any x86-64 hardware device can secure boot to LEAF OS and instantly becomes a locked-down LEAF OS thin client. 
+
+LEAF OS can be used to repurpose PCs and laptops by converting any x86-64 hardware from a stand-alone computer to a dedicated thin client by installing directly onto an internal hard drive and removing the old system and files. This method extends the usefulness of aging computers using end-of-life operating systems like Windows 7 while giving users powerful up-to-date desktops. 
+
+NComputing would like customers to be able to run LEAFOS Linux endpoint on any x86-64 devices without disabling Secure Boot.]
 
 -------------------------------------------------------------------------------
 Who is the primary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the Linux community:
+    - Name: Frank Pesek 
+    - Position: Chief Software Architect 
+    - Email address: fpesek@ncomputing.com 
+    - PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the Linux community: file in repo FrankPesek.pub  
 
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the Linux community:
+    - Name: Richard Sah 
+    - Position: Chief Technology Officer 
+    - Email address: rsah@ncomputing.com 
+    - PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the Linux community: file in repo RichardSah.pub  
 
 -------------------------------------------------------------------------------
 Please create your shim binaries starting with the 15.4 shim release tar file:
@@ -55,17 +63,17 @@ https://github.com/rhboot/shim/releases/download/15.4/shim-15.4.tar.bz2
 This matches https://github.com/rhboot/shim/releases/tag/15.4 and contains
 the appropriate gnu-efi source.
 -------------------------------------------------------------------------------
-[Please confirm]
+[yes, our repo is copy of https://github.com/rhboot/shim/releases/tag/15.4]
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-[your url here]
+[https://github.com/ncboot/shim.git, tag rel-v15.4]
 
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-[your text here]
+[No patches]
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
@@ -73,14 +81,14 @@ If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
  CVE-2020-10713, CVE-2020-14308, CVE-2020-14309, CVE-2020-14310, CVE-2020-14311,
  CVE-2020-15705, and if you are shipping the shim_lock module CVE-2021-3418
 -------------------------------------------------------------------------------
-[your text here]
-
+[Using GRUB 2.06, all above CVEs are fixed]
 
 -------------------------------------------------------------------------------
 What exact implementation of Secureboot in GRUB2 ( if this is your bootloader ) you have ?
 * Upstream GRUB2 shim_lock verifier or * Downstream RHEL/Fedora/Debian/Canonical like implementation ?
 -------------------------------------------------------------------------------
-[your text here]
+[ We use upstream GRUB https://ftp.gnu.org/gnu/grub/grub-2.06.tar.xz
+sha256 b79ea44af91b93d17cd3fe80bdae6ed43770678a9a5ae192ccea803ebb657ee1 grub-2.06.tar.xz ]
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2, and previous shims were trusting affected
@@ -100,7 +108,7 @@ by CVE-2020-14372, CVE-2020-25632, CVE-2020-25647, CVE-2020-27749,
   ( July 2020 grub2 CVE list + March 2021 grub2 CVE list )
   grub2 builds ?
 -------------------------------------------------------------------------------
-[your text here]
+[First time submission]
 
 -------------------------------------------------------------------------------
 If your boot chain of trust includes linux kernel, is
@@ -109,7 +117,7 @@ upstream commit 1957a85b0032a81e6482ca4aab883643b8dae06e applied ?
 Is "ACPI: configfs: Disallow loading ACPI tables when locked down"
 upstream commit 75b0cea7bf307f362057cc778efe89af4c615354 applied ?
 -------------------------------------------------------------------------------
-[your text here]
+[yes, we have above upstream commits]
 
 -------------------------------------------------------------------------------
 If you use vendor_db functionality of providing multiple certificates and/or
@@ -117,7 +125,7 @@ hashes please briefly describe your certificate setup. If there are allow-listed
 please provide exact binaries for which hashes are created via file sharing service,
 available in public with anonymous access for verification
 -------------------------------------------------------------------------------
-[your text here]
+[No]
 
 -------------------------------------------------------------------------------
 If you are re-using a previously used (CA) certificate, you will need
@@ -126,20 +134,20 @@ in order to prevent GRUB2 from being able to chainload those older GRUB2
 binaries. If you are changing to a new (CA) certificate, this does not
 apply. Please describe your strategy.
 -------------------------------------------------------------------------------
-[your text here]
+[N/A]
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
-If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and what the differences would be.
+If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and the differences would be.
 -------------------------------------------------------------------------------
-[your text here]
+[Ubuntu 16.4 or above with Docker, run make-shim.sh]
 
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-[your text here]
+[Output of make-shim.sh script is https://github.com/ncboot/shim-review/blob/master/build.log]
 
 -------------------------------------------------------------------------------
 Add any additional information you think we may need to validate this shim
 -------------------------------------------------------------------------------
-[your text here]
+[N/A]
