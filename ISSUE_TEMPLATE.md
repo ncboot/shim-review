@@ -68,7 +68,7 @@ NComputing would like customers to be able to run LEAFOS Linux endpoint on any x
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
 grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/  
-grub.nc,1,Free Software Foundation,grub,2.06,https://ncomputing.com  
+grub.ncomputing,1,Free Software Foundation,grub,2.06,https://ncomputing.com  
 
 ##### Were your old SHIM hashes provided to Microsoft ?
 `[No, this is first time submission, we have no older SHIMs]`
