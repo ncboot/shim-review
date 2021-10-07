@@ -29,7 +29,7 @@ Make sure you have provided the following information:
 ###### This matches https://github.com/rhboot/shim/releases/tag/15.4 and contains
 ###### the appropriate gnu-efi source.
 ###### Please confirm this as the origin your shim.
-`[yes, our repo https://github.com/ncboot/shim.git, tag rel-v15.4, is copy of https://github.com/rhboot/shim/releases/tag/15.4]`
+`[yes, we use directly https://github.com/rhboot/shim/releases/tag/15.4]`
 
 ###### What's the justification that this really does need to be signed for the whole world to be able to boot it:
 `[NComputing LEAF OS is a Linux software endpoint solution that transforms any x86-64 PC, laptop, or thin client into a secure and centrally managed endpoint to access popular desktop virtualization environments, including Microsoft Azure Virtual Desktop (AVD), Windows 365 Cloud PC, Microsoft Remote Desktop Services (RDS) and others.  
@@ -108,10 +108,10 @@ grub.ncomputing,1,Free Software Foundation,grub,2.06,https://ncomputing.com
 `[No]`
 
 ###### What kernel are you using? Which patches does it includes to enforce Secure Boot?
-`[Kernel 5.4]`
+`[Kernel 5.10]`
 
 ###### What changes were made since your SHIM was last signed?
 `[This is first time submission]`
 
 ###### What is the SHA256 hash of your final SHIM binary?
-`[30f1a70745f2c933d22c0d54c72930ac0f93b8500a1c406d99338c3adb29adbd]`
+`[3ac79c4370f14e444f036319de1c5fbb1fee098e14b6e16cc073b15aa9ef7c39]`

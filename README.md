@@ -63,17 +63,23 @@ https://github.com/rhboot/shim/releases/download/15.4/shim-15.4.tar.bz2
 This matches https://github.com/rhboot/shim/releases/tag/15.4 and contains
 the appropriate gnu-efi source.
 -------------------------------------------------------------------------------
-[yes, our repo is copy of https://github.com/rhboot/shim/releases/tag/15.4]
+[shim binary will be created from https://github.com/rhboot/shim/releases/tag/15.4]
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-[https://github.com/ncboot/shim.git, tag rel-v15.4]
+[https://github.com/rhboot/shim.git, tag 15.4, plus critical commits cherry-picked]
 
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-[No patches]
+[Following commits cherry-picked]
+5b3ca0d2f7b5f425ba1a14db8ce98b8d95a2f89f Fix a broken file header on ia32 Mar 31 14:54:52 2021
+822d07ad4f07ef66fe447a130e1027c88d02a394 Fix handling of ignore_db and user_insecure_mode Apr 8 22:39:02 2021 
+4068fd42c891ea6ebdec056f461babc6e4048844 mok: allocate MOK config table as BootServicesData Apr 8 16:23:03 2021 
+493bd940e5c6e28e673034687de7adef9529efff Don't call QueryVariableInfo() on EFI 1.10 machines shim#364 Apr 10 16:05:23 2021 
+9f973e4e95b1136b8c98051dbbdb1773072cc998 Relax the check for import_mok_state() May 11 10:41:43 2021 
+4d64389c6c941d21548b06423b8131c872e3c3c7 shim: another attempt to fix load options handling Jun 7 16:34:18 2021, 
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
