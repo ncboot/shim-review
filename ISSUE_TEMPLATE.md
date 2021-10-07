@@ -1,12 +1,12 @@
 Make sure you have provided the following information:
 
  - [x] link to your code branch cloned from rhboot/shim-review in the form user/repo@tag  
-            https://github.com/ncboot/shim-review/tree/v15.4b
+            https://github.com/ncboot/shim-review/tree/v15.4c
  - [x] completed README.md file with the necessary information
  - [x] shim.efi to be signed  
-            https://github.com/ncboot/shim-review/blob/v15.4b/shimx64.efi
+            https://github.com/ncboot/shim-review/blob/v15.4c/shimx64.efi
  - [x] public portion of your certificate(s) embedded in shim (the file passed to VENDOR_CERT_FILE)  
-            https://github.com/ncboot/shim-review/blob/v15.4b/NC.cer
+            https://github.com/ncboot/shim-review/blob/v15.4c/NC.cer
  - [x] binaries, for which hashes are added do vendor_db ( if you use vendor_db and have hashes allow-listed )  
             no binaries
  - [x] any extra patches to shim via your own git tree or as files  
@@ -14,9 +14,9 @@ Make sure you have provided the following information:
  - [x] any extra patches to grub via your own git tree or as files  
             no patches
  - [x] build logs  
-            https://github.com/ncboot/shim-review/blob/v15.4b/build.log
+            https://github.com/ncboot/shim-review/blob/v15.4c/build.log
  - [x] a Dockerfile to reproduce the build of the provided shim EFI binaries  
-            https://github.com/ncboot/shim-review/blob/v15.4b/Dockerfile
+            https://github.com/ncboot/shim-review/blob/v15.4c/Dockerfile
 
 ###### What organization or people are asking to have this signed:
 `[NComputing Global, Inc. ]`
