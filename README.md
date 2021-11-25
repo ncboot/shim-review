@@ -47,6 +47,9 @@ Who is the primary contact for security updates, etc.
     - Position: Chief Software Architect 
     - Email address: fpesek@ncomputing.com 
     - PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the Linux community: file in repo FrankPesek.pub  
+        Keyserver:  
+        https://pgp.mit.edu/pks/lookup?search=fpesek%40ncomputing.com&op=vindex&fingerprint=on&exact=on  
+        Fingerprint=2D8A 17C5 E2DF 9D62 3F41  A253 539F 4199 A91B 98BB  
 
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
@@ -55,6 +58,9 @@ Who is the secondary contact for security updates, etc.
     - Position: Chief Technology Officer 
     - Email address: rsah@ncomputing.com 
     - PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the Linux community: file in repo RichardSah.pub  
+        Keyserver:  
+        https://pgp.mit.edu/pks/lookup?search=rsah%40ncomputing.com&op=vindex&fingerprint=on&exact=on  
+        Fingerprint=9A6D E75E B4A2 A6EF 9E87  4B5D BEDC C6F1 4304 EC9F  
 
 -------------------------------------------------------------------------------
 Please create your shim binaries starting with the 15.4 shim release tar file:
