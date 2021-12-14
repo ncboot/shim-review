@@ -48,6 +48,7 @@ Who is the primary contact for security updates, etc.
     - Email address: fpesek@ncomputing.com 
     - PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the Linux community: file in repo FrankPesek.pub  
         Keyserver:  
+        https://keyserver.ubuntu.com/pks/lookup?search=0x2D8A17C5E2DF9D623F41A253539F4199A91B98BB&fingerprint=on&op=index  
         https://pgp.mit.edu/pks/lookup?search=fpesek%40ncomputing.com&op=vindex&fingerprint=on&exact=on  
         Fingerprint=2D8A 17C5 E2DF 9D62 3F41  A253 539F 4199 A91B 98BB  
 
@@ -59,6 +60,7 @@ Who is the secondary contact for security updates, etc.
     - Email address: rsah@ncomputing.com 
     - PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the Linux community: file in repo RichardSah.pub  
         Keyserver:  
+        https://keyserver.ubuntu.com/pks/lookup?search=0x9a6de75eb4a2a6ef9e874b5dbedcc6f14304ec9f&fingerprint=on&op=index  
         https://pgp.mit.edu/pks/lookup?search=rsah%40ncomputing.com&op=vindex&fingerprint=on&exact=on  
         Fingerprint=9A6D E75E B4A2 A6EF 9E87  4B5D BEDC C6F1 4304 EC9F  
 
