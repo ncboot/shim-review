@@ -1,7 +1,7 @@
 Make sure you have provided the following information:
 
  - [x] link to your code branch cloned from rhboot/shim-review in the form user/repo@tag  
-            https://github.com/ncboot/shim-review/tree/ncomputing-shim-x64-20220310
+            https://github.com/ncboot/shim-review/tree/ncomputing-shim-x64-20220310v2
  - [x] completed README.md file with the necessary information
  - [x] shim.efi to be signed  
             https://github.com/ncboot/shim-review/blob/v15.4c/shimx64.efi
