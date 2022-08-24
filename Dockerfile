@@ -18,7 +18,7 @@ WORKDIR /opt/shim
 
 #production
 RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/HEAD/NC.cer
-RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/HEAD/sbat.ncomputing.com
+RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/HEAD/sbat.ncomputing.csv
 RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/HEAD/shimx64.efi
 
 RUN ls -l
