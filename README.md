@@ -119,7 +119,7 @@ This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the a
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
-[First time submission, upstream GRUB2 and shim 15,6 have all above CVEs fixed. Older GRUBs are disallowed because of generation 1 in their SBAT table ]
+[First time submission, upstream GRUB2 and shim 15,6 have all above CVEs fixed. ]
 
 -------------------------------------------------------------------------------
 ### If your boot chain of trust includes a Linux kernel:
@@ -181,15 +181,15 @@ This should include logs for creating the buildroots, applying patches, doing th
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 -------------------------------------------------------------------------------
-[SHIM: 
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md 
-shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim 
-shim.ncomputing,2,NComputing Global Inc,shim,15.6,mail:security@ncomputing.com 
-
-GRUB2: 
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md 
-grub,2,Free Software Foundation,grub,2.06,https//www.gnu.org/software/grub/ 
-grub.ncomputing,2,NComputing Global Inc,grub2,2.06-69edb312,mail:security@ncomputing.com 
+[SHIM:  
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
+shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim  
+shim.ncomputing,2,NComputing Global Inc,shim,15.6,mail:security@ncomputing.com  
+  
+GRUB2:  
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
+grub,2,Free Software Foundation,grub,2.06,https//www.gnu.org/software/grub/  
+grub.ncomputing,2,NComputing Global Inc,grub2,2.06-69edb312,mail:security@ncomputing.com  
 ]
 
 -------------------------------------------------------------------------------
@@ -230,4 +230,4 @@ grub.ncomputing,2,NComputing Global Inc,grub2,2.06-69edb312,mail:security@ncompu
 -------------------------------------------------------------------------------
 ### Add any additional information you think we may need to validate this shim.
 -------------------------------------------------------------------------------
-[N/A]
+[ Contact info for Frank Pesek fpesek@ncomputing.com and Richard Sah rsah@ncomputing.com with PGP keys were already checked during our first attempt to pass signing shim during the year ]
