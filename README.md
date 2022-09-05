@@ -164,7 +164,7 @@ This should include logs for creating the buildroots, applying patches, doing th
 -------------------------------------------------------------------------------
 ### What is the SHA256 hash of your final SHIM binary?
 -------------------------------------------------------------------------------
-[27e393d9f242d9cbcc0d4a939fce9c3d7ca85289a2aa498abcf651c532240488 shimx64.efi]
+[66658ad2cfa33a8b7f960da49731ae6325627630606254d6d08e9b8d02e8dcad shimx64.efi]
 
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
