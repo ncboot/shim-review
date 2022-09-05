@@ -1,36 +1,36 @@
-Sending build context to Docker daemon  4.609MB
+Sending build context to Docker daemon  3.103MB
 Step 1/25 : FROM ubuntu:18.04
  ---> 886eca19e611
 Step 2/25 : LABEL MAINTAINER NComputing Co. Ltd. <info _AT_ ncomputing _DOT_ com>
- ---> Running in 1e533b5c1072
-Removing intermediate container 1e533b5c1072
- ---> f755c0e81aa1
+ ---> Running in 5851d55ed620
+Removing intermediate container 5851d55ed620
+ ---> 8aec06176d7c
 Step 3/25 : RUN apt-get update
- ---> Running in 547ec110321c
+ ---> Running in b5d30bccb2e3
 Get:1 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
 Get:2 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
-Get:3 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [1534 kB]
-Get:4 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
-Get:5 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
-Get:6 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
-Get:7 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
-Get:8 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [2938 kB]
-Get:9 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
-Get:10 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [22.8 kB]
-Get:11 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [1100 kB]
-Get:12 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
-Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [1141 kB]
-Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [29.9 kB]
-Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [2311 kB]
-Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [3369 kB]
-Get:17 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [12.9 kB]
-Get:18 http://archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [12.2 kB]
-Fetched 25.8 MB in 4s (6792 kB/s)
+Get:3 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
+Get:6 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [22.8 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
+Get:9 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [1121 kB]
+Get:10 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [1540 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [2318 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [3395 kB]
+Get:14 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [2959 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [1172 kB]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [29.9 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [12.2 kB]
+Get:18 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [12.9 kB]
+Fetched 26.0 MB in 4s (6718 kB/s)
 Reading package lists...
-Removing intermediate container 547ec110321c
- ---> ddbc5b01fa94
+Removing intermediate container b5d30bccb2e3
+ ---> fcab9d55f331
 Step 4/25 : RUN apt-get install -y build-essential git curl dos2unix bsdmainutils
- ---> Running in e1e9fd569b6b
+ ---> Running in f613e6025a2e
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -143,7 +143,7 @@ Get:43 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libbinutils am
 Get:44 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.30-21ubuntu1~18.04.7 [1839 kB]
 Get:45 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 binutils amd64 2.30-21ubuntu1~18.04.7 [3388 B]
 Get:46 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libc-dev-bin amd64 2.27-3ubuntu1.6 [71.9 kB]
-Get:47 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 linux-libc-dev amd64 4.15.0-191.202 [984 kB]
+Get:47 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 linux-libc-dev amd64 4.15.0-192.203 [985 kB]
 Get:48 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libc6-dev amd64 2.27-3ubuntu1.6 [2587 kB]
 Get:49 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gcc-7-base amd64 7.5.0-3ubuntu1~18.04 [18.3 kB]
 Get:50 http://archive.ubuntu.com/ubuntu bionic/main amd64 libisl19 amd64 0.19-1 [551 kB]
@@ -188,8 +188,8 @@ Get:88 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libldap-common
 Get:89 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libldap-2.4-2 amd64 2.4.45+dfsg-1ubuntu1.11 [154 kB]
 Get:90 http://archive.ubuntu.com/ubuntu bionic/main amd64 libnghttp2-14 amd64 1.30.0-1ubuntu1 [77.8 kB]
 Get:91 http://archive.ubuntu.com/ubuntu bionic/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-1 [54.2 kB]
-Get:92 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcurl4 amd64 7.58.0-2ubuntu3.19 [220 kB]
-Get:93 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 curl amd64 7.58.0-2ubuntu3.19 [159 kB]
+Get:92 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcurl4 amd64 7.58.0-2ubuntu3.20 [220 kB]
+Get:93 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 curl amd64 7.58.0-2ubuntu3.20 [159 kB]
 Get:94 http://archive.ubuntu.com/ubuntu bionic/main amd64 libassuan0 amd64 2.5.1-2 [35.0 kB]
 Get:95 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpgconf amd64 2.2.4-1ubuntu1.6 [124 kB]
 Get:96 http://archive.ubuntu.com/ubuntu bionic/main amd64 libksba8 amd64 1.3.5-2 [92.6 kB]
@@ -197,7 +197,7 @@ Get:97 http://archive.ubuntu.com/ubuntu bionic/main amd64 libnpth0 amd64 1.5-3 [
 Get:98 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 dirmngr amd64 2.2.4-1ubuntu1.6 [317 kB]
 Get:99 http://archive.ubuntu.com/ubuntu bionic/main amd64 libfakeroot amd64 1.22-2ubuntu1 [25.9 kB]
 Get:100 http://archive.ubuntu.com/ubuntu bionic/main amd64 fakeroot amd64 1.22-2ubuntu1 [62.3 kB]
-Get:101 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcurl3-gnutls amd64 7.58.0-2ubuntu3.19 [219 kB]
+Get:101 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcurl3-gnutls amd64 7.58.0-2ubuntu3.20 [219 kB]
 Get:102 http://archive.ubuntu.com/ubuntu bionic/main amd64 liberror-perl all 0.17025-1 [22.8 kB]
 Get:103 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 git-man all 1:2.17.1-1ubuntu0.12 [804 kB]
 Get:104 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 git amd64 1:2.17.1-1ubuntu0.12 [3930 kB]
@@ -218,7 +218,7 @@ Get:118 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libsasl2-modu
 Get:119 http://archive.ubuntu.com/ubuntu bionic/main amd64 manpages-dev all 4.15-1 [2217 kB]
 Get:120 http://archive.ubuntu.com/ubuntu bionic/universe amd64 dos2unix amd64 7.3.4-3 [351 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 69.7 MB in 8s (8586 kB/s)
+[0mFetched 69.7 MB in 8s (9259 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4051 files and directories currently installed.)
 Preparing to unpack .../libc6_2.27-3ubuntu1.6_amd64.deb ...
 debconf: unable to initialize frontend: Dialog
@@ -375,8 +375,8 @@ Selecting previously unselected package libc-dev-bin.
 Preparing to unpack .../029-libc-dev-bin_2.27-3ubuntu1.6_amd64.deb ...
 Unpacking libc-dev-bin (2.27-3ubuntu1.6) ...
 Selecting previously unselected package linux-libc-dev:amd64.
-Preparing to unpack .../030-linux-libc-dev_4.15.0-191.202_amd64.deb ...
-Unpacking linux-libc-dev:amd64 (4.15.0-191.202) ...
+Preparing to unpack .../030-linux-libc-dev_4.15.0-192.203_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (4.15.0-192.203) ...
 Selecting previously unselected package libc6-dev:amd64.
 Preparing to unpack .../031-libc6-dev_2.27-3ubuntu1.6_amd64.deb ...
 Unpacking libc6-dev:amd64 (2.27-3ubuntu1.6) ...
@@ -510,11 +510,11 @@ Selecting previously unselected package librtmp1:amd64.
 Preparing to unpack .../074-librtmp1_2.4+20151223.gitfa8646d.1-1_amd64.deb ...
 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1) ...
 Selecting previously unselected package libcurl4:amd64.
-Preparing to unpack .../075-libcurl4_7.58.0-2ubuntu3.19_amd64.deb ...
-Unpacking libcurl4:amd64 (7.58.0-2ubuntu3.19) ...
+Preparing to unpack .../075-libcurl4_7.58.0-2ubuntu3.20_amd64.deb ...
+Unpacking libcurl4:amd64 (7.58.0-2ubuntu3.20) ...
 Selecting previously unselected package curl.
-Preparing to unpack .../076-curl_7.58.0-2ubuntu3.19_amd64.deb ...
-Unpacking curl (7.58.0-2ubuntu3.19) ...
+Preparing to unpack .../076-curl_7.58.0-2ubuntu3.20_amd64.deb ...
+Unpacking curl (7.58.0-2ubuntu3.20) ...
 Selecting previously unselected package libassuan0:amd64.
 Preparing to unpack .../077-libassuan0_2.5.1-2_amd64.deb ...
 Unpacking libassuan0:amd64 (2.5.1-2) ...
@@ -537,8 +537,8 @@ Selecting previously unselected package fakeroot.
 Preparing to unpack .../083-fakeroot_1.22-2ubuntu1_amd64.deb ...
 Unpacking fakeroot (1.22-2ubuntu1) ...
 Selecting previously unselected package libcurl3-gnutls:amd64.
-Preparing to unpack .../084-libcurl3-gnutls_7.58.0-2ubuntu3.19_amd64.deb ...
-Unpacking libcurl3-gnutls:amd64 (7.58.0-2ubuntu3.19) ...
+Preparing to unpack .../084-libcurl3-gnutls_7.58.0-2ubuntu3.20_amd64.deb ...
+Unpacking libcurl3-gnutls:amd64 (7.58.0-2ubuntu3.20) ...
 Selecting previously unselected package liberror-perl.
 Preparing to unpack .../085-liberror-perl_0.17025-1_all.deb ...
 Unpacking liberror-perl (0.17025-1) ...
@@ -621,7 +621,7 @@ Setting up libreadline7:amd64 (7.0-3) ...
 Setting up libpsl5:amd64 (0.19.1-5build1) ...
 Setting up libtsan0:amd64 (8.4.0-1ubuntu1~18.04) ...
 Setting up libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2.4) ...
-Setting up linux-libc-dev:amd64 (4.15.0-191.202) ...
+Setting up linux-libc-dev:amd64 (4.15.0-192.203) ...
 Setting up libmpfr6:amd64 (4.0.1-1) ...
 Setting up libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2.4) ...
 Setting up dos2unix (7.3.4-3) ...
@@ -747,11 +747,11 @@ update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mo
 update-alternatives: warning: skip creation of /usr/share/man/man1/c++.1.gz because associated file /usr/share/man/man1/g++.1.gz (of link group c++) doesn't exist
 Setting up dirmngr (2.2.4-1ubuntu1.6) ...
 Setting up build-essential (12.4ubuntu1) ...
-Setting up libcurl3-gnutls:amd64 (7.58.0-2ubuntu3.19) ...
-Setting up libcurl4:amd64 (7.58.0-2ubuntu3.19) ...
+Setting up libcurl3-gnutls:amd64 (7.58.0-2ubuntu3.20) ...
+Setting up libcurl4:amd64 (7.58.0-2ubuntu3.20) ...
 Setting up gpg-wks-client (2.2.4-1ubuntu1.6) ...
 Setting up git (1:2.17.1-1ubuntu0.12) ...
-Setting up curl (7.58.0-2ubuntu3.19) ...
+Setting up curl (7.58.0-2ubuntu3.20) ...
 Setting up gnupg (2.2.4-1ubuntu1.6) ...
 Processing triggers for libc-bin (2.27-3ubuntu1.4) ...
 Processing triggers for ca-certificates (20211016~18.04.1) ...
@@ -759,22 +759,22 @@ Updating certificates in /etc/ssl/certs...
 0 added, 0 removed; done.
 Running hooks in /etc/ca-certificates/update.d...
 done.
-Removing intermediate container e1e9fd569b6b
- ---> c7a4013a81ef
+Removing intermediate container f613e6025a2e
+ ---> 31857b0c8c85
 Step 5/25 : LABEL VERSION ="1.0"
- ---> Running in 1c925e673f2a
-Removing intermediate container 1c925e673f2a
- ---> c7eb0adfed1a
+ ---> Running in 376151e60ad5
+Removing intermediate container 376151e60ad5
+ ---> c48e9a08ad2f
 Step 6/25 : LABEL DESCRIPTION ="Docker Image To build Shim 15.6 for NComputing Co. Ltd."
- ---> Running in 5020b5985dd3
-Removing intermediate container 5020b5985dd3
- ---> d8198ee212f0
+ ---> Running in 5bfed919f257
+Removing intermediate container 5bfed919f257
+ ---> efb1eab524a6
 Step 7/25 : WORKDIR /opt
- ---> Running in 7eff350d7082
-Removing intermediate container 7eff350d7082
- ---> d225cbef407a
+ ---> Running in b08967d95705
+Removing intermediate container b08967d95705
+ ---> 974b9970d630
 Step 8/25 : RUN git clone --recursive -b 15.6 https://github.com/rhboot/shim.git shim
- ---> Running in a328fafecf06
+ ---> Running in dada65293692
 [91mCloning into 'shim'...
 [0m[91mNote: checking out '505cdb678b319fcf9a7fdee77c0f091b4147cbe5'.
 
@@ -790,117 +790,117 @@ do so (now or later) by using -b with the checkout command again. Example:
 [0m[91mSubmodule 'gnu-efi' (https://github.com/rhboot/gnu-efi.git) registered for path 'gnu-efi'
 [0m[91mCloning into '/opt/shim/gnu-efi'...
 [0mSubmodule path 'gnu-efi': checked out '03670e14f263ad571bf0f39dffa9b8d23535f4d3'
-Removing intermediate container a328fafecf06
- ---> 2fda84378af7
+Removing intermediate container dada65293692
+ ---> b4345b6d2c0c
 Step 9/25 : WORKDIR /opt/shim
- ---> Running in 09047bfb47a7
-Removing intermediate container 09047bfb47a7
- ---> 33289732abac
-Step 10/25 : RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/HEAD/NC.cer
- ---> Running in 990de5337226
-[91m  % Total    % Received % Xferd  Averag[0m[91me Speed   Time    Time     Time  Cur[0m[91mrent
-  [0m[91m   [0m[91m              [0m[91m          [0m[91m    Dload  Uplo[0m[91mad   Total[0m[91m   Sp[0m[91ment[0m[91m    Left [0m[91m Speed
-[0m[91m  0    [0m[91m 0    0 [0m[91m    0  [0m[91m  0 [0m[91m    0 [0m[91m     0      0 -[0m[91m-:--:--[0m[91m --:--:-- [0m[91m--:[0m[91m--[0m[91m:--     [0m[91m0[0m[91m  0     0    0     0    0     0      0      0 --[0m[91m:--:-- --:--:-- -[0m[91m-:--:-[0m[91m-    [0m[91m 0[0m[91m100  1487  100  1487    0     0   3882      0 --:--:-- --:--:-- --:--:--  3872
-[0mRemoving intermediate container 990de5337226
- ---> 534645ff5ba4
-Step 11/25 : RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/HEAD/sbat.ncomputing.csv
- ---> Running in e45635e4a19c
-[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                [0m[91m Dload  Upload   Total   Spent    Le[0m[91mft  Speed
-  0     0    0    [0m[91m 0    0     0      0[0m[91m      0[0m[91m --:--:-- --:--:-- [0m[91m--:--:--     0[0m[91m  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m100    79  100    79    0     0    204      0 --:--:-- --:--:-- --:--:--   204
-[0mRemoving intermediate container e45635e4a19c
- ---> 89ae9cab157b
-Step 12/25 : RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/HEAD/shimx64.efi
- ---> Running in a3887e9d25c9
-[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                 [0m[91m                Dload  Upload   Total[0m[91m   S[0m[91mpent  [0m[91m  Left  Sp[0m[91meed
-[0m[91m  0     0    0     [0m[91m0    0     0    [0m[91m  0 [0m[91m     0[0m[91m --:--:-- -[0m[91m-:--:-- --:--:[0m[91m--     0[0m[91m  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m100  912k  100  912k    0     0  1335k      0 --:--:-- --:--:-- --:--:-- 1334k
-[0mRemoving intermediate container a3887e9d25c9
- ---> 974f95df75b4
+ ---> Running in 0e52dff03885
+Removing intermediate container 0e52dff03885
+ ---> 776c8ef6626b
+Step 10/25 : RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/ncomputing-shim-x64-20220905/NC.cer
+ ---> Running in 2cf889ee73a1
+[91m  % Total    % Received % Xferd  Ave[0m[91mrage Speed   Time    Time     Time  Current
+                 [0m[91m                Dload  Upload   T[0m[91motal   Spent[0m[91m    Lef[0m[91mt  Spee[0m[91md
+ [0m[91m 0 [0m[91m    0    0     0   [0m[91m 0     0      0[0m[91m     [0m[91m 0 --[0m[91m:--:-- --:[0m[91m--:-- --:--:-[0m[91m-     0[0m[91m  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m100  1487  100  1487    0     0   6668      0 --:--:-- --:--:-- --:--:--  6638
+[0mRemoving intermediate container 2cf889ee73a1
+ ---> 708414b7f31a
+Step 11/25 : RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/ncomputing-shim-x64-20220905/sbat.ncomputing.csv
+ ---> Running in 73b1b4441e37
+[91m  % Total    % Received % Xferd  Average Sp[0m[91meed   Time    Time     Time  Current
+                    [0m[91m             Dload  Upload[0m[91m   Total   Spent    Le[0m[91mft  Speed
+[0m[91m  0     0    0 [0m[91m    0    0     0 [0m[91m     0      0 --:[0m[91m--:-- [0m[91m--:--:-- --:--:--  [0m[91m   0[0m[91m100    79  100    79    0     0    349      0 --:--:-- --:--:-- --:--:--   349
+[0mRemoving intermediate container 73b1b4441e37
+ ---> 575ace762f1a
+Step 12/25 : RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/ncomputing-shim-x64-20220905/shimx64.efi
+ ---> Running in 86d6b1aac4e9
+[91m  % Total    % Received % Xferd  Average[0m[91m Speed   Time    Time     Time  Current
+                                 Dlo[0m[91mad  Upload   Total   Spent [0m[91m   Left [0m[91m Speed
+[0m[91m  0   [0m[91m  0    0     [0m[91m0    0 [0m[91m    0      0   [0m[91m   0 --:--:-- --:--:-- --:--:-[0m[91m-     0[0m[91m100  912k  100  912k    0     0  2023k      0 --:--:-- --:--:-- --:--:-- 2023k[0m[91m
+[0mRemoving intermediate container 86d6b1aac4e9
+ ---> 31be761a7027
 Step 13/25 : RUN ls -l
- ---> Running in db11cd9b61cf
+ ---> Running in 7a1b29903938
 total 1692
--rw-r--r--  1 root root   3708 Aug 26 09:14 BUILDING
--rw-r--r--  1 root root   5494 Aug 26 09:14 CODE_OF_CONDUCT.md
--rw-r--r--  1 root root   1411 Aug 26 09:14 COPYRIGHT
-drwxr-xr-x 12 root root   4096 Aug 26 09:14 Cryptlib
--rw-r--r--  1 root root   6102 Aug 26 09:14 Make.defaults
--rw-r--r--  1 root root    947 Aug 26 09:14 Make.rules
--rw-r--r--  1 root root  12199 Aug 26 09:14 Makefile
--rw-r--r--  1 root root  64954 Aug 26 09:14 MokManager.c
--rw-r--r--  1 root root   3428 Aug 26 09:14 MokVars.txt
--rw-r--r--  1 root root   1487 Aug 26 09:14 NC.cer
--rw-r--r--  1 root root   7654 Aug 26 09:14 PasswordCrypt.c
--rw-r--r--  1 root root   2349 Aug 26 09:14 README.fallback
--rw-r--r--  1 root root   1331 Aug 26 09:14 README.md
--rw-r--r--  1 root root   1420 Aug 26 09:14 README.tpm
--rw-r--r--  1 root root   8727 Aug 26 09:14 SBAT.example.md
--rw-r--r--  1 root root  28658 Aug 26 09:14 SBAT.md
--rw-r--r--  1 root root   2389 Aug 26 09:14 TODO
--rw-r--r--  1 root root   3718 Aug 26 09:14 buildid.c
--rw-r--r--  1 root root   1811 Aug 26 09:14 cert.S
--rw-r--r--  1 root root  30165 Aug 26 09:14 crypt_blowfish.c
--rw-r--r--  1 root root   2897 Aug 26 09:14 csv.c
-drwxr-xr-x  2 root root   4096 Aug 26 09:14 data
--rw-r--r--  1 root root   1515 Aug 26 09:14 elf_aarch64_efi.lds
--rw-r--r--  1 root root   2018 Aug 26 09:14 elf_arm_efi.lds
--rw-r--r--  1 root root   1479 Aug 26 09:14 elf_ia32_efi.lds
--rw-r--r--  1 root root   1646 Aug 26 09:14 elf_ia64_efi.lds
--rw-r--r--  1 root root   1583 Aug 26 09:14 elf_x86_64_efi.lds
--rw-r--r--  1 root root   1876 Aug 26 09:14 errlog.c
--rw-r--r--  1 root root  31362 Aug 26 09:14 fallback.c
--rw-r--r--  1 root root    715 Aug 26 09:14 globals.c
-drwxr-xr-x  6 root root   4096 Aug 26 09:14 gnu-efi
--rw-r--r--  1 root root  19430 Aug 26 09:14 httpboot.c
-drwxr-xr-x  3 root root   4096 Aug 26 09:14 include
-drwxr-xr-x  2 root root   4096 Aug 26 09:14 lib
--rw-r--r--  1 root root  12139 Aug 26 09:14 load-options.c
--rwxr-xr-x  1 root root   2417 Aug 26 09:14 make-archive
--rwxr-xr-x  1 root root  15972 Aug 26 09:14 make-certs
--rw-r--r--  1 root root  38508 Aug 26 09:14 mock-variables.c
--rw-r--r--  1 root root   3614 Aug 26 09:14 model.c
--rw-r--r--  1 root root  30399 Aug 26 09:14 mok.c
--rw-r--r--  1 root root   8042 Aug 26 09:14 netboot.c
--rw-r--r--  1 root root  41240 Aug 26 09:14 pe.c
--rw-r--r--  1 root root  16203 Aug 26 09:14 post-process-pe.c
--rw-r--r--  1 root root   6122 Aug 26 09:14 replacements.c
--rw-r--r--  1 root root  12880 Aug 26 09:14 sbat.c
--rw-r--r--  1 root root     79 Aug 26 09:14 sbat.ncomputing.csv
--rw-r--r--  1 root root  46331 Aug 26 09:14 shim.c
--rw-r--r--  1 root root   7727 Aug 26 09:14 shim.h
--rw-r--r--  1 root root 934371 Aug 26 09:14 shimx64.efi
--rw-r--r--  1 root root  13218 Aug 26 09:14 test-csv.c
-drwxr-xr-x  4 root root   4096 Aug 26 09:14 test-data
--rw-r--r--  1 root root   8917 Aug 26 09:14 test-load-options.c
--rw-r--r--  1 root root  23299 Aug 26 09:14 test-mock-variables.c
--rw-r--r--  1 root root  10246 Aug 26 09:14 test-mok-mirror.c
--rw-r--r--  1 root root  33411 Aug 26 09:14 test-sbat.c
--rw-r--r--  1 root root  53748 Aug 26 09:14 test-str.c
--rw-r--r--  1 root root   6237 Aug 26 09:14 test.c
--rw-r--r--  1 root root   4416 Aug 26 09:14 testplan.txt
--rw-r--r--  1 root root  10130 Aug 26 09:14 tpm.c
--rw-r--r--  1 root root    257 Aug 26 09:14 version.c.in
--rw-r--r--  1 root root    158 Aug 26 09:14 version.h
-Removing intermediate container db11cd9b61cf
- ---> 4244d2fe2a20
+-rw-r--r--  1 root root   3708 Sep  5 07:27 BUILDING
+-rw-r--r--  1 root root   5494 Sep  5 07:27 CODE_OF_CONDUCT.md
+-rw-r--r--  1 root root   1411 Sep  5 07:27 COPYRIGHT
+drwxr-xr-x 12 root root   4096 Sep  5 07:27 Cryptlib
+-rw-r--r--  1 root root   6102 Sep  5 07:27 Make.defaults
+-rw-r--r--  1 root root    947 Sep  5 07:27 Make.rules
+-rw-r--r--  1 root root  12199 Sep  5 07:27 Makefile
+-rw-r--r--  1 root root  64954 Sep  5 07:27 MokManager.c
+-rw-r--r--  1 root root   3428 Sep  5 07:27 MokVars.txt
+-rw-r--r--  1 root root   1487 Sep  5 07:27 NC.cer
+-rw-r--r--  1 root root   7654 Sep  5 07:27 PasswordCrypt.c
+-rw-r--r--  1 root root   2349 Sep  5 07:27 README.fallback
+-rw-r--r--  1 root root   1331 Sep  5 07:27 README.md
+-rw-r--r--  1 root root   1420 Sep  5 07:27 README.tpm
+-rw-r--r--  1 root root   8727 Sep  5 07:27 SBAT.example.md
+-rw-r--r--  1 root root  28658 Sep  5 07:27 SBAT.md
+-rw-r--r--  1 root root   2389 Sep  5 07:27 TODO
+-rw-r--r--  1 root root   3718 Sep  5 07:27 buildid.c
+-rw-r--r--  1 root root   1811 Sep  5 07:27 cert.S
+-rw-r--r--  1 root root  30165 Sep  5 07:27 crypt_blowfish.c
+-rw-r--r--  1 root root   2897 Sep  5 07:27 csv.c
+drwxr-xr-x  2 root root   4096 Sep  5 07:27 data
+-rw-r--r--  1 root root   1515 Sep  5 07:27 elf_aarch64_efi.lds
+-rw-r--r--  1 root root   2018 Sep  5 07:27 elf_arm_efi.lds
+-rw-r--r--  1 root root   1479 Sep  5 07:27 elf_ia32_efi.lds
+-rw-r--r--  1 root root   1646 Sep  5 07:27 elf_ia64_efi.lds
+-rw-r--r--  1 root root   1583 Sep  5 07:27 elf_x86_64_efi.lds
+-rw-r--r--  1 root root   1876 Sep  5 07:27 errlog.c
+-rw-r--r--  1 root root  31362 Sep  5 07:27 fallback.c
+-rw-r--r--  1 root root    715 Sep  5 07:27 globals.c
+drwxr-xr-x  6 root root   4096 Sep  5 07:27 gnu-efi
+-rw-r--r--  1 root root  19430 Sep  5 07:27 httpboot.c
+drwxr-xr-x  3 root root   4096 Sep  5 07:27 include
+drwxr-xr-x  2 root root   4096 Sep  5 07:27 lib
+-rw-r--r--  1 root root  12139 Sep  5 07:27 load-options.c
+-rwxr-xr-x  1 root root   2417 Sep  5 07:27 make-archive
+-rwxr-xr-x  1 root root  15972 Sep  5 07:27 make-certs
+-rw-r--r--  1 root root  38508 Sep  5 07:27 mock-variables.c
+-rw-r--r--  1 root root   3614 Sep  5 07:27 model.c
+-rw-r--r--  1 root root  30399 Sep  5 07:27 mok.c
+-rw-r--r--  1 root root   8042 Sep  5 07:27 netboot.c
+-rw-r--r--  1 root root  41240 Sep  5 07:27 pe.c
+-rw-r--r--  1 root root  16203 Sep  5 07:27 post-process-pe.c
+-rw-r--r--  1 root root   6122 Sep  5 07:27 replacements.c
+-rw-r--r--  1 root root  12880 Sep  5 07:27 sbat.c
+-rw-r--r--  1 root root     79 Sep  5 07:27 sbat.ncomputing.csv
+-rw-r--r--  1 root root  46331 Sep  5 07:27 shim.c
+-rw-r--r--  1 root root   7727 Sep  5 07:27 shim.h
+-rw-r--r--  1 root root 934371 Sep  5 07:27 shimx64.efi
+-rw-r--r--  1 root root  13218 Sep  5 07:27 test-csv.c
+drwxr-xr-x  4 root root   4096 Sep  5 07:27 test-data
+-rw-r--r--  1 root root   8917 Sep  5 07:27 test-load-options.c
+-rw-r--r--  1 root root  23299 Sep  5 07:27 test-mock-variables.c
+-rw-r--r--  1 root root  10246 Sep  5 07:27 test-mok-mirror.c
+-rw-r--r--  1 root root  33411 Sep  5 07:27 test-sbat.c
+-rw-r--r--  1 root root  53748 Sep  5 07:27 test-str.c
+-rw-r--r--  1 root root   6237 Sep  5 07:27 test.c
+-rw-r--r--  1 root root   4416 Sep  5 07:27 testplan.txt
+-rw-r--r--  1 root root  10130 Sep  5 07:27 tpm.c
+-rw-r--r--  1 root root    257 Sep  5 07:27 version.c.in
+-rw-r--r--  1 root root    158 Sep  5 07:27 version.h
+Removing intermediate container 7a1b29903938
+ ---> 3156a71f217f
 Step 14/25 : RUN cp sbat.ncomputing.csv ./data/
- ---> Running in cf76b594b279
-Removing intermediate container cf76b594b279
- ---> 2b939c5e722e
+ ---> Running in 1618e3718603
+Removing intermediate container 1618e3718603
+ ---> 841a4f6fd98e
 Step 15/25 : RUN sha256sum shimx64.efi > shim_orig_hash
- ---> Running in 6a1f241f2ebb
-Removing intermediate container 6a1f241f2ebb
- ---> b03a5a44ce5a
+ ---> Running in 228c5f6109d0
+Removing intermediate container 228c5f6109d0
+ ---> 32b28132c252
 Step 16/25 : RUN hexdump -Cv shimx64.efi > shim_orig_dump
- ---> Running in 8dce1632991b
-Removing intermediate container 8dce1632991b
- ---> 4b52100fdb84
+ ---> Running in 36de15c63486
+Removing intermediate container 36de15c63486
+ ---> 1732a9c4c9b3
 Step 17/25 : RUN cp shimx64.efi shimx64.efi.orig
- ---> Running in 208aa62d19c5
-Removing intermediate container 208aa62d19c5
- ---> f07764a04ed0
+ ---> Running in a5e4f4081b7b
+Removing intermediate container a5e4f4081b7b
+ ---> eb24bdb4d721
 Step 18/25 : RUN make VENDOR_CERT_FILE=NC.cer
- ---> Running in a8f48547866d
+ ---> Running in 6ebbafd48e23
 sed	-e "s,@@VERSION@@,15.6," \
 	-e "s,@@UNAME@@,Linux x86_64 x86_64 x86_64 GNU/Linux," \
 	-e "s,@@COMMIT@@,505cdb678b319fcf9a7fdee77c0f091b4147cbe5," \
@@ -1524,10 +1524,10 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .vendor_cert -j .sbat \
 	--target efi-app-x86_64 fbx64.so fbx64.efi
 ./post-process-pe -vv fbx64.efi
-Removing intermediate container a8f48547866d
- ---> 7994fbebbd2a
+Removing intermediate container 6ebbafd48e23
+ ---> 4740f260692a
 Step 19/25 : RUN objdump -s -j .sbat shimx64.efi
- ---> Running in a03affa52d1b
+ ---> Running in 97294ab89cef
 
 shimx64.efi:     file format pei-x86-64
 
@@ -1541,38 +1541,38 @@ Contents of section .sbat:
  d0060 6d2c312c 68747470 733a2f2f 67697468  m,1,https://gith
  d0070 75622e63 6f6d2f72 68626f6f 742f7368  ub.com/rhboot/sh
  d0080 696d0a73 68696d2e 6e636f6d 70757469  im.shim.ncomputi
- d0090 6e672c32 2c4e436f 6d707574 696e6720  ng,2,NComputing 
+ d0090 6e672c31 2c4e436f 6d707574 696e6720  ng,1,NComputing 
  d00a0 476c6f62 616c2049 6e632c73 68696d2c  Global Inc,shim,
  d00b0 31352e36 2c6d6169 6c3a7365 63757269  15.6,mail:securi
  d00c0 7479406e 636f6d70 7574696e 672e636f  ty@ncomputing.co
  d00d0 6d0a                                 m.              
-Removing intermediate container a03affa52d1b
- ---> 4ee2402dc868
+Removing intermediate container 97294ab89cef
+ ---> 04c5a239d9d7
 Step 20/25 : RUN sha256sum shimx64.efi > shim_built_hash
- ---> Running in 0e69a74689c8
-Removing intermediate container 0e69a74689c8
- ---> 48ca386661b4
+ ---> Running in 69dd7189cfa5
+Removing intermediate container 69dd7189cfa5
+ ---> e9a1838c5209
 Step 21/25 : RUN hexdump -Cv shimx64.efi > shim_built_dump
- ---> Running in 822ba79d8c25
-Removing intermediate container 822ba79d8c25
- ---> d7ace69d4771
+ ---> Running in 227e7b50af9e
+Removing intermediate container 227e7b50af9e
+ ---> 81cad4fcd0cb
 Step 22/25 : RUN cat shim_built_hash
- ---> Running in 24e861a2f33c
-27e393d9f242d9cbcc0d4a939fce9c3d7ca85289a2aa498abcf651c532240488  shimx64.efi
-Removing intermediate container 24e861a2f33c
- ---> 709f16ad2806
+ ---> Running in 40936e189f7c
+66658ad2cfa33a8b7f960da49731ae6325627630606254d6d08e9b8d02e8dcad  shimx64.efi
+Removing intermediate container 40936e189f7c
+ ---> c96c0b664e99
 Step 23/25 : RUN cat shim_orig_hash
- ---> Running in 671255ab7e0a
-27e393d9f242d9cbcc0d4a939fce9c3d7ca85289a2aa498abcf651c532240488  shimx64.efi
-Removing intermediate container 671255ab7e0a
- ---> d50d32605f3e
+ ---> Running in f13132b7d3d5
+66658ad2cfa33a8b7f960da49731ae6325627630606254d6d08e9b8d02e8dcad  shimx64.efi
+Removing intermediate container f13132b7d3d5
+ ---> eb3009f18cb9
 Step 24/25 : RUN diff shim_built_hash shim_orig_hash
- ---> Running in 55717eda3621
-Removing intermediate container 55717eda3621
- ---> 22b58f95cc62
+ ---> Running in 6d09dd635479
+Removing intermediate container 6d09dd635479
+ ---> 7e96eb2cd6a5
 Step 25/25 : RUN diff shim_built_dump shim_orig_dump
- ---> Running in af09c372dd41
-Removing intermediate container af09c372dd41
- ---> 2e8a6d8c08e9
-Successfully built 2e8a6d8c08e9
+ ---> Running in 0faf2f61976a
+Removing intermediate container 0faf2f61976a
+ ---> d2815584d6e3
+Successfully built d2815584d6e3
 Successfully tagged shim-build:latest
