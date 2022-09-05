@@ -184,12 +184,12 @@ This should include logs for creating the buildroots, applying patches, doing th
 [SHIM:  
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
 shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim  
-shim.ncomputing,2,NComputing Global Inc,shim,15.6,mail:security@ncomputing.com  
+shim.ncomputing,1,NComputing Global Inc,shim,15.6,mail:security@ncomputing.com  
   
 GRUB2:  
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
 grub,2,Free Software Foundation,grub,2.06,https//www.gnu.org/software/grub/  
-grub.ncomputing,2,NComputing Global Inc,grub2,2.06-69edb312,mail:security@ncomputing.com  
+grub.ncomputing,1,NComputing Global Inc,grub2,2.06-69edb312,mail:security@ncomputing.com  
 ]
 
 -------------------------------------------------------------------------------
