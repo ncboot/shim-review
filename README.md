@@ -160,7 +160,7 @@ The entry should look similar to: `grub,4,Free Software Foundation,grub,GRUB_UPS
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 *******************************************************************************
-[Upstream GRUB2 v2.12 and shim 15.8 have all above CVEs fixed. ]
+[ Our new shim does not allow older grub because of upper sbat generation id ]
 
 *******************************************************************************
 ### If your boot chain of trust includes a Linux kernel:
@@ -174,7 +174,7 @@ The entry should look similar to: `grub,4,Free Software Foundation,grub,GRUB_UPS
 *******************************************************************************
 ### Do you build your signed kernel with additional local patches? What do they do?
 *******************************************************************************
-[your text here]
+[No local patches]
 
 *******************************************************************************
 ### Do you use an ephemeral key for signing kernel modules?
