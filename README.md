@@ -45,7 +45,7 @@ NComputing would like customers to be able to run LEAFOS Linux endpoint on any x
 *******************************************************************************
 ### Why are you unable to reuse shim from another distro that is already signed?
 *******************************************************************************
-[your text here]
+[NComputing LEAF OS is deeply customized operating system]
 
 *******************************************************************************
 ### Who is the primary contact for security updates, etc.?
@@ -210,7 +210,7 @@ This should include logs for creating the buildroots, applying patches, doing th
 ### What changes were made in the distro's secure boot chain since your SHIM was last signed?
 For example, signing new kernel's variants, UKI, systemd-boot, new certs, new CA, etc..
 *******************************************************************************
-[New NComputing certificate in shim bootloader]
+[New NComputing certificate in shim bootloader, updated grub2 version to 2.12, updated kernel to 6.1.78 or upper ]
 
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
@@ -285,7 +285,7 @@ grub.ncomputing,1,NComputing Global Inc,grub2,2.12,mail:security@ncomputing.com
 *******************************************************************************
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
 *******************************************************************************
-[ upstream kernel 6.10.71 which supports SecureBoot ]
+[ upstream kernel 6.1.78 which supports SecureBoot ]
 
 *******************************************************************************
 ### Add any additional information you think we may need to validate this shim.
