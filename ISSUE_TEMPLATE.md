@@ -12,14 +12,14 @@ Confirm the following are included in your repo, checking each box:
 *******************************************************************************
 ### What is the link to your tag in a repo cloned from rhboot/shim-review?
 *******************************************************************************
-`https://github.com/ncboot/shim-review/tree/ncomputing-shim-x64-20220826`
+`https://github.com/ncboot/shim-review/tree/ncomputing-shim-x64-2024`
 
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-[66658ad2cfa33a8b7f960da49731ae6325627630606254d6d08e9b8d02e8dcad  shimx64.efi]
+[1075d8cee7fac50c87e3b9b10accaed6eaff7514d09122fd7803ece1e3fcbaa0  shimx64.efi]
 
 *******************************************************************************
 ### What is the link to your previous shim review request (if any, otherwise N/A)?
 *******************************************************************************
-[your text here]
+[https://github.com/rhboot/shim-review/issues/279]

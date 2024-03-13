@@ -11,8 +11,8 @@ This repo is for review of requests for signing shim.  To create a request for r
 - file an issue at https://github.com/rhboot/shim-review/issues with a link to your tag
 - approval is ready when the "accepted" label is added to your issue
 
-Note that we really only have experience with using GRUB2 on Linux, so asking
-us to endorse anything else for signing is going to require some convincing on
+Note that we really only have experience with using GRUB2 or systemd-boot on Linux, so
+asking us to endorse anything else for signing is going to require some convincing on
 your part.
 
 Check the docs directory in this repo for guidance on submission and
@@ -76,23 +76,30 @@ You will be asked to post the contents of these mails in your `shim-review` issu
         Fingerprint=9A6D E75E B4A2 A6EF 9E87  4B5D BEDC C6F1 4304 EC9F  
 
 *******************************************************************************
-### Were these binaries created from the 15.7 shim release tar?
-Please create your shim binaries starting with the 15.7 shim release tar file: https://github.com/rhboot/shim/releases/download/15.7/shim-15.7.tar.bz2
+### Were these binaries created from the 15.8 shim release tar?
+Please create your shim binaries starting with the 15.8 shim release tar file: https://github.com/rhboot/shim/releases/download/15.8/shim-15.8.tar.bz2
 
-This matches https://github.com/rhboot/shim/releases/tag/15.7 and contains the appropriate gnu-efi source.
+This matches https://github.com/rhboot/shim/releases/tag/15.8 and contains the appropriate gnu-efi source.
 
 *******************************************************************************
-[We confirm, shim binary will be created from https://github.com/rhboot/shim/releases/tag/15.7 ]
+[We confirm, shim binary will be created from https://github.com/rhboot/shim/releases/tag/15.8 ]
 
 *******************************************************************************
 ### URL for a repo that contains the exact code which was built to get this binary:
 *******************************************************************************
-[https://github.com/rhboot/shim/releases/tag/15.7 the only difference it is built with NComputing Certificate embedded ]
+[https://github.com/rhboot/shim/releases/tag/15.8 the only difference it is built with NComputing Certificate embedded ]
 
 *******************************************************************************
 ### What patches are being applied and why:
 *******************************************************************************
 [no patches ]
+
+*******************************************************************************
+### Do you have the NX bit set in your shim? If so, is your entire boot stack NX-compatible and what testing have you done to ensure such compatibility?
+
+See https://techcommunity.microsoft.com/t5/hardware-dev-center/nx-exception-for-shim-community/ba-p/3976522 for more details on the signing of shim without NX bit.
+*******************************************************************************
+[NX bit is not set in our shim]
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
@@ -141,19 +148,19 @@ This matches https://github.com/rhboot/shim/releases/tag/15.7 and contains the a
   * CVE-2023-4693
   * CVE-2023-4692
 *******************************************************************************
-[your text here]
+[We are using upstream GRUB 2.12 which has above CVEs fixed]
 
 *******************************************************************************
-### If these fixes have been applied, is the upstream global SBAT generation in your GRUB2 binary set to 4?
+### If shim is loading GRUB2 bootloader, and if these fixes have been applied, is the upstream global SBAT generation in your GRUB2 binary set to 4?
 The entry should look similar to: `grub,4,Free Software Foundation,grub,GRUB_UPSTREAM_VERSION,https://www.gnu.org/software/grub/`
 *******************************************************************************
-[your text here]
+[Yes, upstream global SBAT generation in our GRUB2 binary is set to 4]
 
 *******************************************************************************
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 *******************************************************************************
-[First time submission, upstream GRUB2 and shim 15,6 have all above CVEs fixed. ]
+[Upstream GRUB2 v2.12 and shim 15.8 have all above CVEs fixed. ]
 
 *******************************************************************************
 ### If your boot chain of trust includes a Linux kernel:
@@ -173,7 +180,7 @@ The entry should look similar to: `grub,4,Free Software Foundation,grub,GRUB_UPS
 ### Do you use an ephemeral key for signing kernel modules?
 ### If not, please describe how you ensure that one kernel build does not load modules built for another kernel.
 *******************************************************************************
-[your text here]
+[Yes, ephemeral key for signing kernel modules is used]
 
 *******************************************************************************
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
@@ -185,7 +192,7 @@ The entry should look similar to: `grub,4,Free Software Foundation,grub,GRUB_UPS
 ### If you are re-using a previously used (CA) certificate, you will need to add the hashes of the previous GRUB2 binaries exposed to the CVEs to vendor_dbx in shim in order to prevent GRUB2 from being able to chainload those older GRUB2 binaries. If you are changing to a new (CA) certificate, this does not apply.
 ### Please describe your strategy.
 *******************************************************************************
-[N/A because first time submission. Anyway in future older GRUB2 builds will be disallowed to boot by generation id in SBAT]
+[We changing to a new (CA) certificate. Anyway in future older GRUB2 builds will be disallowed to boot by generation id in SBAT]
 
 *******************************************************************************
 ### What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as closely as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
@@ -200,14 +207,15 @@ This should include logs for creating the buildroots, applying patches, doing th
 [build.log file is output of make-shim.sh ]
 
 *******************************************************************************
-### What changes were made since your SHIM was last signed?
+### What changes were made in the distro's secure boot chain since your SHIM was last signed?
+For example, signing new kernel's variants, UKI, systemd-boot, new certs, new CA, etc..
 *******************************************************************************
-[N/A, first time submission]
+[New NComputing certificate in shim bootloader]
 
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-[66658ad2cfa33a8b7f960da49731ae6325627630606254d6d08e9b8d02e8dcad shimx64.efi]
+[1075d8cee7fac50c87e3b9b10accaed6eaff7514d09122fd7803ece1e3fcbaa0 shimx64.efi]
 
 *******************************************************************************
 ### How do you manage and protect the keys used in your SHIM?
@@ -220,33 +228,39 @@ This should include logs for creating the buildroots, applying patches, doing th
 [Yes ]
 
 *******************************************************************************
-### Do you add a vendor-specific SBAT entry to the SBAT section in each binary that supports SBAT metadata ( GRUB2, fwupd, fwupdate, shim + all child shim binaries )?
-### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
+### Do you add a vendor-specific SBAT entry to the SBAT section in each binary that supports SBAT metadata ( GRUB2, fwupd, fwupdate, systemd-boot, systemd-stub, shim + all child shim binaries )?
+### Please provide exact SBAT entries for all shim binaries as well as all SBAT binaries that shim will directly boot.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
-If you are using a downstream implementation of GRUB2 (e.g. from Fedora or Debian), please
-preserve the SBAT entry from those distributions and only append your own.
-More information on how SBAT works can be found [here](https://github.com/rhboot/shim/blob/main/SBAT.md).
+If you are using a downstream implementation of GRUB2 or systemd-boot (e.g.
+from Fedora or Debian), please preserve the SBAT entry from those distributions
+and only append your own. More information on how SBAT works can be found
+[here](https://github.com/rhboot/shim/blob/main/SBAT.md).
 *******************************************************************************
 [SHIM:  
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
-shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim  
-shim.ncomputing,1,NComputing Global Inc,shim,15.6,mail:security@ncomputing.com  
+shim,4,UEFI shim,shim,1,https://github.com/rhboot/shim  
+shim.ncomputing,1,NComputing Global Inc,shim,15.8,mail:security@ncomputing.com  
   
 GRUB2:  
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
-grub,2,Free Software Foundation,grub,2.06,https//www.gnu.org/software/grub/  
-grub.ncomputing,1,NComputing Global Inc,grub2,2.06-69edb312,mail:security@ncomputing.com  
+grub,4,Free Software Foundation,grub,2.12,https//www.gnu.org/software/grub/  
+grub.ncomputing,1,NComputing Global Inc,grub2,2.12,mail:security@ncomputing.com  
 ]
 
 *******************************************************************************
-### Which modules are built into your signed GRUB2 image?
+### If shim is loading GRUB2 bootloader, which modules are built into your signed GRUB2 image?
 *******************************************************************************
 [all_video boot linux ext2 fat font squash4 part_msdos part_gpt normal]
 
 *******************************************************************************
-### What is the origin and full version number of your bootloader (GRUB2 or other)?
+### If you are using systemd-boot on arm64 or riscv, is the fix for [unverified Devicetree Blob loading](https://github.com/systemd/systemd/security/advisories/GHSA-6m6p-rjcq-334c) included?
 *******************************************************************************
-[ Upstream GRUB2 https://git.savannah.gnu.org/git/grub.git, commit 69edb31205602c29293a8c6e67363bba2a4a1e66, 11 Augest 2022 ]
+[No arm64 or RISCV]
+
+*******************************************************************************
+### 1What is the origin and full version number of your bootloader (GRUB2 or systemd-boot or other)?
+*******************************************************************************
+[ Upstream GRUB2 https://git.savannah.gnu.org/git/grub.git, tag grub-2.12 ]
 
 *******************************************************************************
 ### If your SHIM launches any other components, please provide further details on what is launched.
@@ -254,7 +268,7 @@ grub.ncomputing,1,NComputing Global Inc,grub2,2.06-69edb312,mail:security@ncompu
 [ shimx64.efi launches only GRUB2, which then launches kernel ]
 
 *******************************************************************************
-### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
+### If your GRUB2 or systemd-boot launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
 *******************************************************************************
 [ GRUB2 launches kernel only, no other components. GRUB2 verifies signatures of kernel using shim routines. ]
 
@@ -276,4 +290,5 @@ grub.ncomputing,1,NComputing Global Inc,grub2,2.06-69edb312,mail:security@ncompu
 *******************************************************************************
 ### Add any additional information you think we may need to validate this shim.
 *******************************************************************************
-[ Contact info for Frank Pesek fpesek@ncomputing.com and Richard Sah rsah@ncomputing.com with PGP keys were already checked during our first attempt to pass signing shim during the year ]
+[]
+
