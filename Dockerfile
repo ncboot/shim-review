@@ -57,5 +57,5 @@ RUN sha256sum shimx64.efi > shim_built_hash
 RUN hexdump -Cv shimx64.efi > shim_built_dump
 RUN cat shim_built_hash
 RUN cat shim_orig_hash
-#RUN diff shim_built_hash shim_orig_hash
-#RUN diff shim_built_dump shim_orig_dump
+RUN diff shim_built_hash shim_orig_hash
+RUN diff shim_built_dump shim_orig_dump
