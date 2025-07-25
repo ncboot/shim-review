@@ -27,6 +27,25 @@ Here's the template:
 NComputing is a software developer providing secure endpoint solutions for companies and organizations worldwide. https://ncomputing.com ]
 
 *******************************************************************************
+### What's the legal data that proves the organization's genuineness?
+The reviewers should be able to easily verify, that your organization is a legal entity, to prevent abuse. Provide the information, which can prove the genuineness with certainty.
+*******************************************************************************
+
+Company/tax register entries or equivalent:
+(a link to the organization entry in your jurisdiction's register will do)
+
+[your text here]
+
+The public details of both your organization and the issuer in the EV certificate used for signing .cab files at Microsoft Hardware Dev Center File Signing Services.
+(not the CA certificate embedded in your shim binary)
+
+Example:
+
+Issuer: O=MyIssuer, Ltd., CN=MyIssuer EV Code Signing CA
+Subject: C=XX, O=MyCompany, Inc., CN=MyCompany, Inc.
+[your text here]
+
+*******************************************************************************
 ### What product or service is this for?
 *******************************************************************************
 [LEAF OS Linux software endpoint solution by NComputing ]
@@ -76,21 +95,37 @@ You will be asked to post the contents of these mails in your `shim-review` issu
         Fingerprint=9A6D E75E B4A2 A6EF 9E87  4B5D BEDC C6F1 4304 EC9F  
 
 *******************************************************************************
-### Were these binaries created from the 15.8 shim release tar?
-Please create your shim binaries starting with the 15.8 shim release tar file: https://github.com/rhboot/shim/releases/download/15.8/shim-15.8.tar.bz2
+### Were these binaries created from the 16.0 shim release tar?
+Please create your shim binaries starting with the 16.0 shim release tar file: https://github.com/rhboot/shim/releases/download/15.8/shim-15.8.tar.bz2
 
-This matches https://github.com/rhboot/shim/releases/tag/15.8 and contains the appropriate gnu-efi source.
+This matches https://github.com/rhboot/shim/releases/tag/16.0 and contains the appropriate gnu-efi source.
 
+Make sure the tarball is correct by verifying your download's checksum with the following ones:
+
+7b518edd63eb840081912f095ed1487a  shim-16.0.tar.bz2
+c2453b9b3c02bc01eea248e9cf634a179ff8828c  shim-16.0.tar.bz2
+d503f778dc75895d3130da07e2ff23d2393862f95b6cd3d24b10cbd4af847217  shim-16.0.tar.bz2
+b4367f3b1e0716d093f4230902e392d3228bd346e2e07a9377c498d8b3b08a5c0ad25c31aa03af66f54648618074a29b55a3e51925e5cfe5c7ac97257bd25880  shim-16.0.tar.bz2
+Make sure that you've verified that your build process uses that file as a source of truth (excluding external patches) and its checksum matches. You can also further validate the release by checking the PGP signature: there's a detached signature
+
+The release is signed by the maintainer Peter Jones - his master key has the fingerprint B00B48BC731AA8840FED9FB0EED266B70F4FEF10 and the signing sub-key in the signature here has the fingerprint 02093E0D19DDE0F7DFFBB53C1FD3F540256A1372. A copy of his public key is included here for reference: pjones.asc
+
+Once you're sure that the tarball you are using is correct and authentic, please confirm this here with a simple yes.
+
+A short guide on verifying public keys and signatures should be available in the docs directory.
 *******************************************************************************
-[We confirm, shim binary will be created from https://github.com/rhboot/shim/releases/tag/15.8 ]
+[We confirm, shim binary will be created from https://github.com/rhboot/shim/releases/tag/16.0 ]
 
 *******************************************************************************
 ### URL for a repo that contains the exact code which was built to get this binary:
 *******************************************************************************
-[https://github.com/rhboot/shim/releases/tag/15.8 the only difference it is built with NComputing Certificate embedded ]
+[https://github.com/rhboot/shim/releases/tag/16.0 the only difference it is built with NComputing Certificate embedded ]
 
 *******************************************************************************
 ### What patches are being applied and why:
+
+Mention all the external patches and build process modifications, which are used during your building process, that make your shim binary be the exact one that you posted as part of this application.
+
 *******************************************************************************
 [no patches ]
 
@@ -102,12 +137,17 @@ See https://techcommunity.microsoft.com/t5/hardware-dev-center/nx-exception-for-
 [NX bit is not set in our shim]
 
 *******************************************************************************
-### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
+### What exact implementation of Secure Boot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
+
+Skip this, if you're not using GRUB2.
+
 *******************************************************************************
 [ Using upstream GRUB2 ]
 
 *******************************************************************************
-### If shim is loading GRUB2 bootloader and your previously released shim booted a version of GRUB2 affected by any of the CVEs in the July 2020, the March 2021, the June 7th 2022, the November 15th 2022, or 3rd of October 2023 GRUB2 CVE list, have fixes for all these CVEs been applied?
+### Do you have fixes for all the following GRUB2 CVEs applied?
+
+Skip this, if you're not using GRUB2, otherwise make sure these are present and confirm with yes.
 
 * 2020 July - BootHole
   * Details: https://lists.gnu.org/archive/html/grub-devel/2020-07/msg00034.html
@@ -167,6 +207,10 @@ The entry should look similar to: `grub,4,Free Software Foundation,grub,GRUB_UPS
 ### Is upstream commit [1957a85b0032a81e6482ca4aab883643b8dae06e "efi: Restrict efivar_ssdt_load when the kernel is locked down"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=1957a85b0032a81e6482ca4aab883643b8dae06e) applied?
 ### Is upstream commit [75b0cea7bf307f362057cc778efe89af4c615354 "ACPI: configfs: Disallow loading ACPI tables when locked down"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=75b0cea7bf307f362057cc778efe89af4c615354) applied?
 ### Is upstream commit [eadb2f47a3ced5c64b23b90fd2a3463f63726066 "lockdown: also lock down previous kgdb use"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=eadb2f47a3ced5c64b23b90fd2a3463f63726066) applied?
+
+Hint: upstream kernels should have all these applied, but if you ship your own heavily-modified older kernel version, that is being maintained separately from upstream, this may not be the case.
+If you are shipping an older kernel, double-check your sources; maybe you do not have all the patches, but ship a configuration, that does not expose the issue(s).
+
 *******************************************************************************
 [we have first 2 upstream commits: 1957a85b0032a81e6482ca4aab883643b8dae06e and
 75b0cea7bf307f362057cc778efe89af4c615354. 3rd is not used in our upstream kernel version but CONFIG_DEBUG_KERNEL is not set ]
@@ -239,7 +283,7 @@ and only append your own. More information on how SBAT works can be found
 [SHIM:  
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
 shim,4,UEFI shim,shim,1,https://github.com/rhboot/shim  
-shim.ncomputing,1,NComputing Global Inc,shim,15.8,mail:security@ncomputing.com  
+shim.ncomputing,1,NComputing Global Inc,shim,16.0,mail:security@ncomputing.com  
   
 GRUB2:  
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
