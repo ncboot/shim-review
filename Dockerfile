@@ -1,42 +1,31 @@
 FROM ubuntu:noble
-LABEL MAINTAINER NComputing Co. Ltd. <info _AT_ ncomputing _DOT_ com>
+LABEL MAINTAINER="NComputing Co. Ltd. <info _AT_ ncomputing _DOT_ com>"
 
 RUN apt-get update
 RUN apt-get install -y build-essential curl dos2unix bsdmainutils gpg gpg-agent
 
-LABEL VERSION ="2.0"
-LABEL DESCRIPTION ="Docker Image To build Shim 16.0 for NComputing Co. Ltd."
+LABEL VERSION="2.0"
+LABEL DESCRIPTION="Docker Image To build Shim 16.1 for NComputing Co. Ltd."
 
 WORKDIR /opt
 
-#RUN git clone --recursive -b 15.8 https://github.com/rhboot/shim.git shim
-
 ADD pjones.asc .
 
-ARG SHIM16_URL="https://github.com/rhboot/shim/releases/download/16.0/shim-16.0.tar.bz2"
+ARG SHIM16_1_URL="https://github.com/rhboot/shim/releases/download/16.1/shim-16.1.tar.bz2"
 
 # Checksums for the shim tarball
-ARG CRC_MD5="7b518edd63eb840081912f095ed1487a"
-ARG CRC_SHA1="c2453b9b3c02bc01eea248e9cf634a179ff8828c"
-ARG CRC_SHA256="d503f778dc75895d3130da07e2ff23d2393862f95b6cd3d24b10cbd4af847217"
-ARG CRC_SHA512="b4367f3b1e0716d093f4230902e392d3228bd346e2e07a9377c498d8b3b08a5c0ad25c31aa03af66f54648618074a29b55a3e51925e5cfe5c7ac97257bd25880"
+ARG CRC_SHA256="46319cd228d8f2c06c744241c0f342412329a7c630436fce7f82cf6936b1d603"
+ARG CRC_SHA512="ca5f80e82f3b80b622028f03ef23105c98ee1b6a25f52a59c823080a3202dd4b9962266489296e99f955eb92e36ce13e0b1d57f688350006bba45f2718f159fb"
 
-# download shim-16.0, verify and extract
-RUN curl --silent --location --remote-name ${SHIM16_URL} && \
-    curl --silent --location --remote-name ${SHIM16_URL}.asc && \
-    echo "${CRC_MD5}  $(basename ${SHIM16_URL})" | md5sum --check && \
-    echo "${CRC_SHA1}  $(basename ${SHIM16_URL})" | sha1sum --check && \
-    echo "${CRC_SHA256}  $(basename ${SHIM16_URL})" | sha256sum --check && \
-    echo "${CRC_SHA512}  $(basename ${SHIM16_URL})" | sha512sum --check && \
-    tar -jxvpf $(basename ${SHIM16_URL}) && \
-    rm $(basename ${SHIM16_URL})
+# download shim-16.1, verify and extract
+RUN curl --silent --location --remote-name ${SHIM16_1_URL} && \
+    curl --silent --location --remote-name ${SHIM16_1_URL}.asc && \
+    echo "${CRC_SHA256}  $(basename ${SHIM16_1_URL})" | sha256sum --check && \
+    echo "${CRC_SHA512}  $(basename ${SHIM16_1_URL})" | sha512sum --check && \
+    tar -jxvpf $(basename ${SHIM16_1_URL}) && \
+    rm $(basename ${SHIM16_1_URL})
 
-WORKDIR /opt/shim-16.0
-
-#do not download 
-#RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/v16.0/NC.cer
-#RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/v16.0/sbat.ncomputing.csv
-#RUN curl -O  https://raw.githubusercontent.com/ncboot/shim-review/v16.0/shimx64.efi
+WORKDIR /opt/shim-16.1
 
 ADD NC.cer .
 ADD sbat.ncomputing.csv .
