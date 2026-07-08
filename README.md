@@ -113,31 +113,29 @@ Make sure the tarball is correct by verifying your download's checksum
 (SHA256, SHA512) with the following ones:
 
 ```
-7b518edd63eb840081912f095ed1487a  shim-16.0.tar.bz2
-c2453b9b3c02bc01eea248e9cf634a179ff8828c  shim-16.0.tar.bz2
-d503f778dc75895d3130da07e2ff23d2393862f95b6cd3d24b10cbd4af847217  shim-16.0.tar.bz2
-b4367f3b1e0716d093f4230902e392d3228bd346e2e07a9377c498d8b3b08a5c0ad25c31aa03af66f54648618074a29b55a3e51925e5cfe5c7ac97257bd25880  shim-16.0.tar.bz2
+46319cd228d8f2c06c744241c0f342412329a7c630436fce7f82cf6936b1d603  shim-16.1.tar.bz2
+ca5f80e82f3b80b622028f03ef23105c98ee1b6a25f52a59c823080a3202dd4b9962266489296e99f955eb92e36ce13e0b1d57f688350006bba45f2718f159fb  shim-16.1.tar.bz2
 ```
 
 Make sure that you've verified that your build process uses that file
 as a source of truth (excluding external patches) and its checksum
 matches. You can also further validate the release by checking the PGP
 signature: there's [a detached
-signature](https://github.com/rhboot/shim/releases/download/16.0/shim-16.0.tar.bz2.asc)
+signature](https://github.com/rhboot/shim/releases/download/16.1/shim-16.1.tar.bz2.asc)
 
 The release is signed by the maintainer Peter Jones - his master key
 has the fingerprint `B00B48BC731AA8840FED9FB0EED266B70F4FEF10` and the
 signing sub-key in the signature here has the fingerprint
 `02093E0D19DDE0F7DFFBB53C1FD3F540256A1372`. A copy of his public key
 is included here for reference:
-[pjones.asc](https://github.com/rhboot/shim-review/pjones.asc)
+[pjones.asc](https://github.com/rhboot/shim-review/blob/main/pjones.asc)
 
 Once you're sure that the tarball you are using is correct and
 authentic, please confirm this here with a simple *yes*.
 
 A short guide on verifying public keys and signatures should be available in the [docs](./docs/) directory.
 *******************************************************************************
-[We confirm, shim binary will be created from https://github.com/rhboot/shim/releases/tag/16.0 ]
+[yes]
 
 *******************************************************************************
 ### URL for a repo that contains the exact code which was built to result in your binary:
@@ -145,7 +143,7 @@ Hint: If you attach all the patches and modifications that are being used to you
 
 You can also point to your custom git servers, where the code is hosted.
 *******************************************************************************
-[https://github.com/rhboot/shim/releases/tag/16.0 the only difference it is built with NComputing Certificate embedded ]
+[https://github.com/rhboot/shim/releases/tag/16.1 the only difference it is built with NComputing Certificate embedded ]
 
 *******************************************************************************
 ### What patches are being applied and why:
@@ -232,14 +230,14 @@ Skip this, if you're not using GRUB2.
   * CVE-2025-1118
   * CVE-2025-1125
 *******************************************************************************
-[We are using upstream GRUB 2.14 which has above CVEs fixed]
+[We are using upstream GRUB 2.14 which has above CVEs fixed. Grub from commit d38d6a1a9b79427848976f53d474392cd29c2a71 (HEAD, tag: grub-2.14)]
 
 *******************************************************************************
-### If shim is loading GRUB2 bootloader, and if these fixes have been applied, is the upstream global SBAT generation in your GRUB2 binary set to 4?
+### If shim is loading GRUB2 bootloader, and if these fixes have been applied, is the upstream global SBAT generation in your GRUB2 binary set to 5?
 Skip this, if you're not using GRUB2, otherwise do you have an entry in your GRUB2 binary similar to:  
-`grub,4,Free Software Foundation,grub,GRUB_UPSTREAM_VERSION,https://www.gnu.org/software/grub/`?
+`grub,5,Free Software Foundation,grub,GRUB_UPSTREAM_VERSION,https://www.gnu.org/software/grub/`?
 *******************************************************************************
-[Yes, upstream global SBAT generation in our GRUB2 binary is set to 4]
+[Yes, upstream global SBAT generation in our GRUB2 binary is set to 5]
 
 *******************************************************************************
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
@@ -299,7 +297,7 @@ Hint: Prefer using *frozen* packages for your toolchain, since an update to GCC,
 
 If your shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case, what the differences would be and what build environment (OS and toolchain) is being used to reproduce this build? In this case please write a detailed guide, how to setup this build environment from scratch.
 *******************************************************************************
-[Ubuntu 20.4 or above with Docker, run make-shim.sh ]
+[Ubuntu 22.4 or above with Docker, run make-shim.sh ]
 
 *******************************************************************************
 ### Which files in this repo are the logs for your build?
@@ -313,12 +311,12 @@ For example, signing new kernel's variants, UKI, systemd-boot, new certs, new CA
 
 Skip this, if this is your first application for having shim signed.
 *******************************************************************************
-[New NComputing certificate in shim bootloader, updated grub2 version to 2.12, updated kernel to 6.1.78 or upper ]
+[New NComputing certificate in shim bootloader, updated grub2 version to 2.14, updated kernel to 6.6.47 or upper ]
 
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-[1075d8cee7fac50c87e3b9b10accaed6eaff7514d09122fd7803ece1e3fcbaa0 shimx64.efi]
+[b5fb0b6751f282117c74aa4769e60119e92c5c12e84855a1a9d9c1ad46b7a6ae shimx64.efi]
 
 *******************************************************************************
 ### How do you manage and protect the keys used in your shim?
@@ -330,7 +328,7 @@ Describe the security strategy that is used for key protection. This can range f
 ### Do you use EV certificates as embedded certificates in the shim?
 A _yes_ or _no_ will do. There's no penalty for the latter.
 *******************************************************************************
-[Yes ]
+[No ]
 
 *******************************************************************************
 ### Are you embedding a CA certificate in your shim?
@@ -339,7 +337,7 @@ if _yes_: does that certificate include the X509v3 Basic Constraints
 to say that it is a CA? See the [docs](./docs/) for more guidance
 about this.
 *******************************************************************************
-[yes, embedding a CA certificate, X509v3 Basic Constraints is set to FALSE]
+[yes, embedding a CA certificate, X509v3 Basic Constraints is set to TRUE]
 
 *******************************************************************************
 ### Do you add a vendor-specific SBAT entry to the SBAT section in each binary that supports SBAT metadata ( GRUB2, fwupd, fwupdate, systemd-boot, systemd-stub, shim + all child shim binaries )?
@@ -350,17 +348,17 @@ If you are using a downstream implementation of GRUB2 (e.g. from Fedora or Debia
 
 **Remember to post the entries of all the binaries. Apart from your bootloader, you may also be shipping e.g. a firmware updater, which will also have these.**
 
-Hint: run `objcopy --only-section .sbat -O binary YOUR_EFI_BINARY /dev/stdout` to get these entries. Paste them here. Preferably surround each listing with three backticks (\`\`\`), so they render well.
+Hint: run `objcopy --dump-section .sbat=/dev/stdout YOUR_EFI_BINARY` to get these entries. Paste them here. Preferably surround each listing with three backticks (\`\`\`), so they render well.
 *******************************************************************************
 [SHIM:  
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
-shim,4,UEFI shim,shim,1,https://github.com/rhboot/shim  
-shim.ncomputing,1,NComputing Global Inc,shim,16.0,mail:security@ncomputing.com  
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+shim,4,UEFI shim,shim,1,https://github.com/rhboot/shim
+shim.ncomputing,1,NComputing Global Inc,shim,16.1,mail:security@ncomputing.com
   
 GRUB2:  
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
-grub,4,Free Software Foundation,grub,2.12,https//www.gnu.org/software/grub/  
-grub.ncomputing,1,NComputing Global Inc,grub2,2.12,mail:security@ncomputing.com  
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+grub,5,Free Software Foundation,grub,2.14,https//www.gnu.org/software/grub/
+grub.ncomputing,1,NComputing Global Inc,grub2,2.14-d38d6a1a,mail:security@ncomputing.com
 ]
 
 *******************************************************************************
@@ -377,12 +375,13 @@ Hint: this is about those modules that are in the binary itself, not the `.mod` 
 [No arm64 or RISCV]
 
 *******************************************************************************
-### 1What is the origin and full version number of your bootloader (GRUB2 or systemd-boot or other)?
+### What is the origin and full version number of your bootloader (GRUB2 or systemd-boot or other)?
 *******************************************************************************
-[ Upstream GRUB2 https://git.savannah.gnu.org/git/grub.git, tag grub-2.12 ]
+[ Upstream GRUB2 https://git.savannah.gnu.org/git/grub.git, tag grub-2.14 ]
 
 *******************************************************************************
-### If your SHIM launches any other components, please provide further details on what is launched.
+### If your shim launches any other components apart from your bootloader, please provide further details on what is launched.
+Hint: The most common case here will be a firmware updater like fwupd.
 *******************************************************************************
 [ shimx64.efi launches only GRUB2, which then launches kernel ]
 
@@ -406,7 +405,7 @@ Summarize in one or two sentences, how your secure bootchain works on higher lev
 *******************************************************************************
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
 *******************************************************************************
-[ upstream kernel 6.1.78 which supports SecureBoot ]
+[ upstream kernel 6.6.47 or upper, which supports SecureBoot ]
 
 *******************************************************************************
 ### What contributions have you made to help us review the applications of other applicants?
