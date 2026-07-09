@@ -262,7 +262,7 @@ If you are shipping an older kernel, double-check your sources; maybe you do not
 ### with Secure Boot enabled?
 Hint: If it does not, we are not likely to sign your shim.
 *******************************************************************************
-[your text here]
+[ Our kernel configuration has option CONFIG_LOCK_DOWN_KERNEL_FORCE_INTEGRITY=y ]
 
 *******************************************************************************
 ### Do you build your signed kernel with additional local patches? What do they do?
@@ -350,12 +350,13 @@ If you are using a downstream implementation of GRUB2 (e.g. from Fedora or Debia
 
 Hint: run `objcopy --dump-section .sbat=/dev/stdout YOUR_EFI_BINARY` to get these entries. Paste them here. Preferably surround each listing with three backticks (\`\`\`), so they render well.
 *******************************************************************************
-[SHIM:  
+
+[SHIM:
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,4,UEFI shim,shim,1,https://github.com/rhboot/shim
 shim.ncomputing,1,NComputing Global Inc,shim,16.1,mail:security@ncomputing.com
-  
-GRUB2:  
+
+GRUB2:
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 grub,5,Free Software Foundation,grub,2.14,https//www.gnu.org/software/grub/
 grub.ncomputing,1,NComputing Global Inc,grub2,2.14-d38d6a1a,mail:security@ncomputing.com
