@@ -12,14 +12,22 @@ Confirm the following are included in your repo, checking each box:
 *******************************************************************************
 ### What is the link to your tag in a repo cloned from rhboot/shim-review?
 *******************************************************************************
-`https://github.com/ncboot/shim-review/tree/ncomputing-shim-x64-20240313`
+`https://github.com/ncboot/shim-review/tree/ncomputing-shim-x64-20260713`
 
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-[1075d8cee7fac50c87e3b9b10accaed6eaff7514d09122fd7803ece1e3fcbaa0  shimx64.efi]
+[b5fb0b6751f282117c74aa4769e60119e92c5c12e84855a1a9d9c1ad46b7a6ae  shimx64.efi]
 
 *******************************************************************************
 ### What is the link to your previous shim review request (if any, otherwise N/A)?
 *******************************************************************************
-[https://github.com/rhboot/shim-review/issues/279]
+[https://github.com/rhboot/shim-review/issues/401]
+
+*******************************************************************************
+### If no security contacts have changed since verification, what is the link to your request, where they've been verified (if any, otherwise N/A)?
+*******************************************************************************
+[ Contact verification was completed at https://github.com/rhboot/shim-review/issues/279
+  besides that, another person is involved now Adam Bójko abojko@ncomputing.com
+  So, we need contact verification for him.
+]
