@@ -49,8 +49,10 @@ Example:
 Issuer: O=MyIssuer, Ltd., CN=MyIssuer EV Code Signing CA
 Subject: C=XX, O=MyCompany, Inc., CN=MyCompany, Inc.
 ```
-
-[your text here]
+[
+Issuer: O = "DigiCert, Inc.", CN = DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
+Subject: C=US, O = "NComputing Global, Inc.", CN = "NComputing Global, Inc."
+]
 
 *******************************************************************************
 ### What product or service is this for?
@@ -82,14 +84,13 @@ You will be asked to post the contents of these mails in your `shim-review` issu
 Please upload the PGP keys to a well-known keyserver like keyserver.ubuntu.com and/or include them in the review as an .asc file, and point to them here.
 
 *******************************************************************************
-- Name: Frank Pesek 
-- Position: Chief Software Architect 
-- Email address: fpesek@ncomputing.com 
-- PGP key fingerprint: file in repo FrankPesek.pub  
+- Name: Adam Bójko 
+- Position: Chief Software Security 
+- Email address: abojko@ncomputing.com 
+- PGP key fingerprint: file in repo Adam_Bójko_0x8604FCB6931BE18C_public.asc 
         Keyserver:  
-        https://keyserver.ubuntu.com/pks/lookup?search=0x2D8A17C5E2DF9D623F41A253539F4199A91B98BB&fingerprint=on&op=index  
-        https://pgp.mit.edu/pks/lookup?search=fpesek%40ncomputing.com&op=vindex&fingerprint=on&exact=on  
-        Fingerprint=2D8A 17C5 E2DF 9D62 3F41  A253 539F 4199 A91B 98BB  
+        https://keyserver.ubuntu.com/pks/lookup?search=abojko%40ncomputing.com&fingerprint=on&op=index
+        Fingerprint=68E4 035B F377 1005 A41F  1A00 8604 FCB6 931B E18C  
 
 *******************************************************************************
 ### Who is the secondary contact for security updates, etc.?
