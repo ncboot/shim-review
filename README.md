@@ -359,7 +359,7 @@ shim.ncomputing,1,NComputing Global Inc,shim,16.1,mail:security@ncomputing.com
 
 GRUB2:
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-grub,5,Free Software Foundation,grub,2.14,https//www.gnu.org/software/grub/
+grub,5,Free Software Foundation,grub,2.14,https://www.gnu.org/software/grub/
 grub.ncomputing,1,NComputing Global Inc,grub2,2.14-d38d6a1a,mail:security@ncomputing.com
 ]
 
