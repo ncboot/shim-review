@@ -1,11 +1,21 @@
-FROM ubuntu:noble
-LABEL MAINTAINER="NComputing Co. Ltd. <info _AT_ ncomputing _DOT_ com>"
+FROM ubuntu:noble@sha256:4fbb8e6a8395de5a7550b33509421a2bafbc0aab6c06ba2cef9ebffbc7092d90
 
-RUN apt-get update
+
+RUN echo 'APT::Snapshot "20260720T020500Z";' | tee /etc/apt/apt.conf.d/50snapshot
+RUN apt-config dump | grep -i snapshot
+
+RUN apt-get update -o Acquire::https::Verify-Peer=false && apt-get install -y -o Acquire::https::Verify-Peer=false ca-certificates
+
 RUN apt-get install -y build-essential curl dos2unix bsdmainutils gpg gpg-agent
+RUN apt policy build-essential
+RUN apt policy curl
+RUN apt policy dos2unix
+RUN apt policy gpg
+RUN apt policy gpg-agent
 
 LABEL VERSION="2.0"
 LABEL DESCRIPTION="Docker Image To build Shim 16.1 for NComputing Co. Ltd."
+LABEL MAINTAINER="NComputing Co. Ltd. <info _AT_ ncomputing _DOT_ com>"
 
 WORKDIR /opt
 
